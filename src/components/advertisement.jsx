@@ -4,7 +4,7 @@ import advertisement from '../assets/advertisement/advertisement.svg'
 
 export default function Advertisement() {
     return (
-        <article className='flex flex-col w-full items-center text-center py-[120px]'>
+        <article className='flex flex-col w-full items-center text-center py-[120px] px-6'>
                 <img className='w-full h-[300px] rounded-[8px] ' src={advertisement} alt="ad" />
             <div>
                 <h1 className='text-[28px] text-[#000] font-bold mt-[40px] mb-[32px] tracking-[1px]'>BRINGING YOU THE <span className='text-[#d87d4a]'>BEST</span> AUDIO GEAR</h1>

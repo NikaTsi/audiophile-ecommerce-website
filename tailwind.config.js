@@ -6,7 +6,11 @@ module.exports = {
       Manrope: ["Manrope", 'sans-serif'],
     },
     backgroundImage: {
-      "MainBackground-mobile": 'url(./assets/main/mainBackground-mobile.svg)'
+      "MainBackground-mobile": 'url(./assets/main/mainBackground-mobile.svg)',
+      "circles-mobile": 'url(./assets/main/circles-mobile.svg)',
+      "circles-tablet": 'url(./assets/main/circles-tablet.svg)',
+      "circles-desktop": 'url(./assets/main/circles-desktop.svg)',
+      "ZX7": 'url(./assets/main/ZX7.svg)',
     },
     extend: {
       dropShadow: {

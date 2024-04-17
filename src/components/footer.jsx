@@ -26,10 +26,10 @@ export default function Footer() {
                 {<Navigation flexDirection={"flex-col"} gap={"gap-4"} />}
             </div>
 
-            <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+            <p className='text-[15px] leading-[25px] font-medium opacity-50'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
 
             <div className='flex flex-col gap-12'>
-                <p>Copyright 2021. All Rights Reserved</p>
+                <p className='text-[15px] leading-[25px] font-bold opacity-50'>Copyright 2021. All Rights Reserved</p>
             </div>
 
             <div className='flex gap-4 items-center'>
