@@ -1,10 +1,6 @@
 {
     "navigation": [
         {
-            "title": "HOME",
-            "url": "/"
-        },
-        {
             "title": "HEADPHONES",
             "url": "/headphones"
         },
@@ -34,6 +30,28 @@
             "title": "EARPHONES"
         }
     ],
+    "cards": {
+        "headphones": [
+            {
+                "title": "XX99 MARK II HEADPHONES",
+                "description": "NEW PRODUCT",
+                "paragraph": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+                "img": "/cards/xx99-mark-2.svg"
+            },
+            {
+                "title": "XX99 MARK I HEADPHONES",
+                "paragraph": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
+                "img": "/cards/xx99-mark-1.svg"
+            },
+            {
+                "title": "XX59 HEADPHONES",
+                "paragraph": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
+                "img": "/cards/xx59.svg"
+            }
+        ],
+        "speakers": [],
+        "earphones": []
+    },
     "footer": {
         "svg": [
             {

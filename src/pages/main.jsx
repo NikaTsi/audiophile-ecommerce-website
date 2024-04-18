@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/header'
-import Section from '../components/section'
+import Categories from '../components/categories'
 import Advertisement from '../components/advertisement'
 import Button from '../components/button'
 import Footer from '../components/footer'
@@ -22,9 +22,7 @@ function Main() {
         <Button text={`[#FFF]`} background={`[#d87d4a]`} hoverBackground={`[#fbaf85]`} />
       </div>
 
-      <div>
-        <Section />
-      </div>
+        <Categories value={"main"} />
 
       <div className='flex flex-col w-full px-6 gap-6'>
 
@@ -52,9 +50,7 @@ function Main() {
 
       </div>
 
-      <div>
-        <Advertisement />
-      </div>
+      <Advertisement />
 
       <Footer />
 

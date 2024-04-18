@@ -2,7 +2,7 @@ import React from 'react'
 import data from '../data.json'
 import arrow from '../assets/section/arrow.svg'
 
-export default function Section() {
+export default function Categories( {value}) {
   const imageWidths = ["w-[80px]", "w-[84px]", "w-[103px]"]
 
   let cards = data.section.map((item, index) => (
@@ -18,7 +18,7 @@ export default function Section() {
 
 
   return (
-    <section className='flex flex-col  w-full items-center gap-[68px] pt-[92px] pb-[120px]'>
+    <section className={`flex flex-col  w-full items-center gap-[68px] pt-[92px] ${value && "pb-[120px]"}`}>
       {cards}
     </section>
   )

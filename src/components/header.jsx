@@ -5,10 +5,9 @@ import cart from '../assets/navigation/cart.svg'
 
 export default function Header() {
     return (
-        <header className='flex flex-col w-full font-Manrope bg-[#000000]'>
-            <div className='flex w-full h-[15px] opacity-50 bg-[#191919] md:hidden'></div>
+        <header className='flex flex-col w-full font-Manrope bg-[#000000] '>
 
-            <div className='flex w-full justify-between items-center pt-[17px] pb-[32px] px-6 md:py-8 md:px-10'>
+            <div className='flex w-full justify-between items-center py-8 px-6 md:py-8 md:px-10'>
                 <div className='flex w-full items-center gap-[76px] md:gap-[42px]'>
                     <img className='w-4 h-[15px] cursor-pointer' src={burgerMenu} alt="burgerMenu" />
                     <img className='w-[143px] h-[25px] cursor-pointer' src={logo} alt="logo" />

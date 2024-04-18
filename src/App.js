@@ -21,8 +21,8 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Main />} />
-        {/* <Route path='/headphones' element={<Headphones />} /> */}
-        {/* <Route path='/speakers' element={<Speakers />} /> */}
+        <Route path='/headphones' element={<Headphones />} />
+        <Route path='/speakers' element={<Speakers />} />
         {/* <Route path='/earphones' element={<EarPhones />} /> */}
       </Routes>
     </BrowserRouter>
