@@ -17,7 +17,7 @@ function Speakers() {
                 <h1 className='text-[#FFF] text-[28px] tracking-[2px] font-bold'>SPEAKERS</h1>
             </div>
 
-            {/* <Card category={"headphones"} /> */}
+            <Card category={"speakers"} />
 
 
             <Categories />

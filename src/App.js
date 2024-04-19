@@ -23,7 +23,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/speakers' element={<Speakers />} />
-        {/* <Route path='/earphones' element={<EarPhones />} /> */}
+        <Route path='/earphones' element={<EarPhones />} />
       </Routes>
     </BrowserRouter>
   );

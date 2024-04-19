@@ -41,7 +41,7 @@ function Main() {
         </div>
 
         <div className='flex flex-col gap-6 w-full'>
-          <img className='rounded-[8px]' src={yx1} alt="yx1" />
+          <img className='h-[200px] w-full rounded-[8px] object-cover' src={yx1} alt="yx1" />
           <div className='flex flex-col w-full gap-8 rounded-[8px] bg-[#f1f1f1] py-[41px] px-6'>
             <h1 className='text-[28px] font-bold tracking-[2px] text-[#000]'>ZX7 SPEAKER</h1>
             <Button background={`transparent`} text={`[#000]`} border={`border-[#000]`} hoverBackground={`[#000]`} hoverText={`[#FFF]`} />
