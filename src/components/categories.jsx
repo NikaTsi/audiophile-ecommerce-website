@@ -11,7 +11,7 @@ export default function Categories( {value}) {
       <h1 className='font-bold text-[15px] text-[#000000] tracking-[1px]'>{item.title}</h1>
       <div className='flex items-center gap-[13px] mt-[17px]'>
         <p className='font-bold text-[13px] text-[#000000] opacity-50 tracking-[1px]'>SHOP</p>
-        <img className='' src={arrow} alt="arrowIcon" />
+        <img src={arrow} alt="arrowIcon" />
       </div>
     </div>
   ))

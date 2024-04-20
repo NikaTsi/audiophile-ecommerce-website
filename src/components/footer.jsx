@@ -5,16 +5,6 @@ import { Link } from 'react-router-dom'
 import data from '../data.json'
 
 export default function Footer() {
-
-    const renderSvg = data.footer.svg.map((item, i) => (
-        <Link to={`${item.href}`} target={`item` + `${i}`} key={i}>
-            <svg className='fill-[#FFF] cursor-pointer hover:fill-[#D87D4A] flex' xmlns="http://www.w3.org/2000/svg" width="24" height="24" >
-                <path fillRule="evenodd" clipRule="evenodd" d={`${item.d}`} />
-            </svg>
-        </Link>
-    ))
-
-
     return (
         <footer className='flex flex-col w-full gap-12 relative bg-[#101010] text-[#FFF] items-center text-center pt-[52px] pb-[38px] px-6'>
             <div className='flex absolute top-0 left-[50%] translate-x-[calc(-50%)] w-[101px] h-[4px] bg-[#d87d4a]'></div>
@@ -33,7 +23,13 @@ export default function Footer() {
             </div>
 
             <div className='flex gap-4 items-center'>
-                {renderSvg}
+                {data.footer.svg.map((item, i) => (
+                    <Link to={`${item.href}`} target={`item` + `${i}`} key={i}>
+                        <svg className='fill-[#FFF] cursor-pointer hover:fill-[#D87D4A] flex' xmlns="http://www.w3.org/2000/svg" width="24" height="24" >
+                            <path fillRule="evenodd" clipRule="evenodd" d={`${item.d}`} />
+                        </svg>
+                    </Link>
+                ))}
             </div>
 
         </footer>

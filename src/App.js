@@ -4,6 +4,7 @@ import Main from "./pages/main";
 import Headphones from "./pages/headphones";
 import Speakers from './pages/speakers';
 import EarPhones from './pages/earphones';
+import Product from './pages/product';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/speakers' element={<Speakers />} />
         <Route path='/earphones' element={<EarPhones />} />
+        <Route path="/products/:productId" element={<Product />} />
       </Routes>
     </BrowserRouter>
   );
