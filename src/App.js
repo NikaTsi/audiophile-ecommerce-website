@@ -25,7 +25,7 @@ function App() {
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/speakers' element={<Speakers />} />
         <Route path='/earphones' element={<EarPhones />} />
-        <Route path="/products/:productId" element={<Product />} />
+        <Route path="/:category/:productId" element={<Product />} />
       </Routes>
     </BrowserRouter>
   );
