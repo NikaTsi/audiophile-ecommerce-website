@@ -49,47 +49,55 @@ function Product() {
         }
     };
 
+    console.log(product);
+
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
             <Header />
             <div className='flex flex-col w-full px-6 '>
 
-                <Link to={`/${category}`}>
-                    <button>Go back</button>
-                </Link>
-                
+                <Link to={`/${category}`} className='font-medium text-[15px] leading-[25px] text-[#000] opacity-50 pt-4 pb-6'>Go Back</Link>
+
                 {product && (
-                    <div className='flex flex-col w-full '>
-                        <div>
+                    <div className='flex flex-col w-full gap-8'>
+                        <div className='flex w-full justify-center pt-[56px] h-[327px] bg-[#f1f1f1] rounded-[8px]'>
                             <img className="h-[202px] drop-shadow-3xl" src={require(`../assets${product.img}`)} alt={product.title} />
                         </div>
-                        <div>
-                            <span>{product.description}</span>
-                            <h1>{product.title}</h1>
-                            <h1>{product.paragraph}</h1>
-                            <h1>{product.price}</h1>
+                        <div className='flex flex-col gap-6'>
+                            <span className='text-[14px] font-normal text-[#d87d4a] tracking-[10px]'>{product.description}</span>
+                            <h1 className='text-[28px] font-bold text-[#000] tracking-[1px] leading-[38px]'>{product.title}</h1>
+                            <h1 className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.paragraph}</h1>
+                            <h1 className='text-[18px] font-bold text-[#000] tracking-[1.3px]'>{product.price}</h1>
                         </div>
-                        <div>
-                            <div className="quantity-selector">
-                                <button onClick={decrementQuantity}>-</button>
-                                <span>{quantity}</span>
-                                <button onClick={incrementQuantity}>+</button>
+                        <div className='flex w-full gap-4'>
+                            <div className="flex h-12 w-[120px] gap-5 items-center justify-center bg-[#f1f1f1]">
+                                <button className='flex items-center justify-center w-4 h-[18px]' onClick={decrementQuantity}>-</button>
+                                <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantity}</span>
+                                <button className='flex items-center justify-center w-4 h-[18px]' onClick={incrementQuantity}>+</button>
                             </div>
-                            <div>
-                                <button onClick={addToCart}>Add to Cart</button>
-                            </div>
+                            <button className='font-bold w-40 h-[48px] bg-[#d87d4a] text-[13px] tracking-[1px] text-[#FFF]' onClick={addToCart}>ADD TO CART</button>
                         </div>
                     </div>
                 )}
-                <div>
-                    <div>
-                        <h3>FEATURES</h3>
-                        <p>{product?.features}</p>
+
+                {product && (<div>
+                    <div className='flex flex-col py-[88px] gap-6'>
+                        <h3 className='text-[24px] leading-[36px] font-bold text-[#000] tracking-[0.8px]'>FEATURES</h3>
+                        <p className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.features}</p>
                     </div>
-                    <div>
-                        <h3>IN THE BOX</h3>
+                    <div className='flex flex-col pb-[88px] gap-6'>
+                        <h3 className='text-[24px] leading-[36px] font-bold text-[#000] tracking-[0.8px]'>IN THE BOX</h3>
+                        <div className='flex flex-col gap-[8px]'>
+                            {product.box.amount.map((amount, index) => (
+                                <div className='flex gap-6'>
+                                    <span className='text-[15px] font-bold text-[#d87d4a] leading-[25px]'>{amount}</span>
+                                    <span className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.box.items[index]}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </div>)}
+
             </div>
             <Categories />
             <Advertisement />
