@@ -44,7 +44,9 @@
                 "box": {
                     "amount": ["1x", "2x", "1x", "1x", "1x"],
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable", "Travel Bag"]
-                }
+                },
+                "images": ["/products/card1-MK2.svg", "/products/card2-MK2.svg", "/products/card3-MK2.svg"],
+                "otherCards": []
             },
             {
                 "name": "XX99 MK I",
@@ -57,7 +59,9 @@
                 "box": {
                     "amount": ["1x", "2x", "1x", "1x"],
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable"]
-                }
+                },
+                "images": ["/products/card1-MK1.svg", "/products/card2-MK1.svg", "/products/card3-MK1.svg"],
+                "otherCards": []
             },
             {
                 "name": "XX99",
@@ -70,7 +74,9 @@
                 "box": {
                     "amount": ["1x", "2x", "1x", "1x"],
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable"]
-                }
+                },
+                "images": ["/products/card1-XX.svg", "/products/card2-XX.svg", "/products/card3-XX.svg"],
+                "otherCards": []
             }
         ],
         "speakers": [
@@ -86,7 +92,9 @@
                 "box": {
                     "amount": ["2x", "2x", "1x", "1x", "1x"],
                     "items":["Speaker Unit", "Speaker Cloth Panel", "User Manual", "3.5mm 10m Audio Cable", "10m Optical Cable"]
-                }
+                },
+                "images": ["/products/card1-ZX9.svg", "/products/card2-ZX9.svg", "/products/card3-ZX9.svg"],
+                "otherCards": []
             },
             {
                 "name": "ZX7",
@@ -99,7 +107,9 @@
                 "box": {
                     "amount": ["2x", "2x", "1x", "1x", "1x"],
                     "items":["Speaker Unit", "Speaker Cloth Panel", "User Manual", "3.5mm 7.5m Audio Cable", "7.5m Optical Cable"]
-                }
+                },
+                "images": ["/products/card1-ZX7.svg", "/products/card2-ZX7.svg", "/products/card3-ZX7.svg"],
+                "otherCards": []
             }
         ],
         "earphones": [
@@ -115,7 +125,9 @@
                 "box": {
                     "amount": ["2x", "6x", "1x", "1x", "1x"],
                     "items":["Earphone Unit", "Multi-size Earplugs", "User Manual", "USB-C Charging Cable", "Travel Pouch"]
-                }
+                },
+                "images": ["/products/card1-YX.svg", "/products/card2-YX.svg", "/products/card3-YX.svg"],
+                "otherCards": []
             }
         ]
     },

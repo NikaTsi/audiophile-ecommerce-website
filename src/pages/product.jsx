@@ -49,7 +49,7 @@ function Product() {
         }
     };
 
-    console.log(product);
+    let imageHeight = ["h-[174px]", "h-[174px]", "h-[368px]"]
 
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
@@ -97,6 +97,16 @@ function Product() {
                         </div>
                     </div>
                 </div>)}
+
+                <div className='flex flex-col w-full items-center gap-5'>
+                    {product && (
+                        product.images.map((item, index) => (
+                            <div className='flex w-full items-center'>
+                                <img className={`w-full rounded-[8px] object-cover ${imageHeight[index]}`} src={require(`../assets${item}`)} alt={product.title} />
+                            </div>
+                        ))
+                    )}
+                </div>
 
             </div>
             <Categories />
