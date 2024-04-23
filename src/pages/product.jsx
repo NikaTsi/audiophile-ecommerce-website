@@ -4,6 +4,7 @@ import Header from '../components/header';
 import Categories from '../components/categories';
 import Advertisement from '../components/advertisement';
 import Footer from '../components/footer';
+import OtherProducts from '../components/otherProducts';
 import data from '../data.json';
 
 function Product() {
@@ -54,6 +55,7 @@ function Product() {
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
             <Header />
+
             <div className='flex flex-col w-full px-6 '>
 
                 <Link to={`/${category}`} className='font-medium text-[15px] leading-[25px] text-[#000] opacity-50 pt-4 pb-6'>Go Back</Link>
@@ -107,8 +109,10 @@ function Product() {
                         ))
                     )}
                 </div>
-
+                {product && <OtherProducts product={product}/>}
+                
             </div>
+
             <Categories />
             <Advertisement />
             <Footer />

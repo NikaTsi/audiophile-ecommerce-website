@@ -46,7 +46,12 @@
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable", "Travel Bag"]
                 },
                 "images": ["/products/card1-MK2.svg", "/products/card2-MK2.svg", "/products/card3-MK2.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["XX99 MARK I", "XX59", "ZX9 SPEAKER"],
+                    "category": ["headphones", "headphones", "speakers"],
+                    "newId": [ "XX99-mark-I-headphone", "XX59-headphone", "ZX9-speaker"],
+                    "icons": []
+                }
             },
             {
                 "name": "XX99 MK I",
@@ -61,10 +66,15 @@
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable"]
                 },
                 "images": ["/products/card1-MK1.svg", "/products/card2-MK1.svg", "/products/card3-MK1.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["XX99 MARK II", "XX59", "ZX9 SPEAKER"],
+                    "category": ["headphones", "headphones", "speakers"],
+                    "newId": [ "XX99-mark-II-headphone", "XX59-headphone", "ZX9-speaker"],
+                    "icons": []
+                }
             },
             {
-                "name": "XX99",
+                "name": "XX59",
                 "title": "XX59 HEADPHONES",
                 "id": "XX59-headphone",
                 "paragraph": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -76,7 +86,12 @@
                     "items":["Headphone Unit", "Replacement Earcups", "User Manual", "3.5mm 5m Audio Cable"]
                 },
                 "images": ["/products/card1-XX.svg", "/products/card2-XX.svg", "/products/card3-XX.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["XX99 MARK II", "XX99 MARK I", "ZX9 SPEAKER"],
+                    "category": ["headphones", "headphones", "speakers"],
+                    "newId": [ "XX99-mark-II-headphone", "XX99-mark-I-headphone", "ZX9-speaker"],
+                    "icons": []
+                }
             }
         ],
         "speakers": [
@@ -94,7 +109,12 @@
                     "items":["Speaker Unit", "Speaker Cloth Panel", "User Manual", "3.5mm 10m Audio Cable", "10m Optical Cable"]
                 },
                 "images": ["/products/card1-ZX9.svg", "/products/card2-ZX9.svg", "/products/card3-ZX9.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["ZX7 SPEAKERS", "XX99 MARK I", "XX59"],
+                    "category": ["speakers", "headphones", "headphones"],
+                    "newId": ["ZX7-speaker", "XX99-mark-I-headphone", "XX59-headphone"],
+                    "icons": []
+                }
             },
             {
                 "name": "ZX7",
@@ -109,7 +129,12 @@
                     "items":["Speaker Unit", "Speaker Cloth Panel", "User Manual", "3.5mm 7.5m Audio Cable", "7.5m Optical Cable"]
                 },
                 "images": ["/products/card1-ZX7.svg", "/products/card2-ZX7.svg", "/products/card3-ZX7.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["ZX9 SPEAKERS", "XX99 MARK I", "XX59"],
+                    "category": ["speakers", "headphones", "headphones"],
+                    "newId": ["ZX9-speaker", "XX99-mark-I-headphone", "XX59-headphone"],
+                    "icons": []
+                }
             }
         ],
         "earphones": [
@@ -127,7 +152,12 @@
                     "items":["Earphone Unit", "Multi-size Earplugs", "User Manual", "USB-C Charging Cable", "Travel Pouch"]
                 },
                 "images": ["/products/card1-YX.svg", "/products/card2-YX.svg", "/products/card3-YX.svg"],
-                "otherCards": []
+                "otherCards": {
+                    "heading": ["XX99 MARK I", "XX59", "ZX9 SPEAKERS"],
+                    "category": ["headphones", "headphones", "speakers"],
+                    "newId": ["XX99-mark-I-headphone", "XX59-headphone", "ZX9-speaker"],
+                    "icons": []
+                }
             }
         ]
     },
