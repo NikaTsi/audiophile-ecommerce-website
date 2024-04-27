@@ -50,7 +50,7 @@
                     "heading": ["XX99 MARK I", "XX59", "ZX9 SPEAKER"],
                     "category": ["headphones", "headphones", "speakers"],
                     "newId": [ "XX99-mark-I-headphone", "XX59-headphone", "ZX9-speaker"],
-                    "icons": []
+                    "icons": ["/otherCards/mark-1.svg", "/otherCards/xx59.svg", "/otherCards/zx9.svg"]
                 }
             },
             {
@@ -70,7 +70,7 @@
                     "heading": ["XX99 MARK II", "XX59", "ZX9 SPEAKER"],
                     "category": ["headphones", "headphones", "speakers"],
                     "newId": [ "XX99-mark-II-headphone", "XX59-headphone", "ZX9-speaker"],
-                    "icons": []
+                    "icons": ["/otherCards/mark-2.svg", "/otherCards/xx59.svg", "/otherCards/zx9.svg"]
                 }
             },
             {
@@ -90,7 +90,7 @@
                     "heading": ["XX99 MARK II", "XX99 MARK I", "ZX9 SPEAKER"],
                     "category": ["headphones", "headphones", "speakers"],
                     "newId": [ "XX99-mark-II-headphone", "XX99-mark-I-headphone", "ZX9-speaker"],
-                    "icons": []
+                    "icons": ["/otherCards/mark-2.svg", "/otherCards/mark-1.svg", "/otherCards/zx9.svg"]
                 }
             }
         ],
@@ -113,7 +113,7 @@
                     "heading": ["ZX7 SPEAKERS", "XX99 MARK I", "XX59"],
                     "category": ["speakers", "headphones", "headphones"],
                     "newId": ["ZX7-speaker", "XX99-mark-I-headphone", "XX59-headphone"],
-                    "icons": []
+                    "icons": ["/otherCards/zx7.svg", "/otherCards/mark-1.svg", "/otherCards/xx59.svg"]
                 }
             },
             {
@@ -133,7 +133,7 @@
                     "heading": ["ZX9 SPEAKERS", "XX99 MARK I", "XX59"],
                     "category": ["speakers", "headphones", "headphones"],
                     "newId": ["ZX9-speaker", "XX99-mark-I-headphone", "XX59-headphone"],
-                    "icons": []
+                    "icons": ["/otherCards/zx9.svg", "/otherCards/mark-1.svg", "/otherCards/xx59.svg"]
                 }
             }
         ],
@@ -156,7 +156,7 @@
                     "heading": ["XX99 MARK I", "XX59", "ZX9 SPEAKERS"],
                     "category": ["headphones", "headphones", "speakers"],
                     "newId": ["XX99-mark-I-headphone", "XX59-headphone", "ZX9-speaker"],
-                    "icons": []
+                    "icons": ["/otherCards/mark-1.svg", "/otherCards/xx59.svg", "/otherCards/zx9.svg"]
                 }
             }
         ]

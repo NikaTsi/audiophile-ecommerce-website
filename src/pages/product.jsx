@@ -109,6 +109,11 @@ function Product() {
                         ))
                     )}
                 </div>
+
+                <div className='flex w-full justify-center mt-[120px]'>
+                    <h1 className='text-[26px] font-bold text-[#000] tracking-[0.9px] leading-[36px]'>YOU MAY ALSO LIKE</h1>
+                </div>
+
                 {product && <OtherProducts product={product}/>}
                 
             </div>
