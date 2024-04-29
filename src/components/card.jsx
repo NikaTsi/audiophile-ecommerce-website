@@ -16,7 +16,7 @@ export default function Card({ category }) {
                         <h1 className='text-[28px] font-bold text-[#000] tracking-[1px] leading-[38px]'>{item.title}</h1>
                         <p className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{item.paragraph}</p>
                         <Link to={`/${category}/${item.id}`}>
-                            <Button text={`[#FFF]`} background={`[#d87d4a]`} hoverBackground={`[#fbaf85]`} />
+                            <Button text={`text-[#FFF]`} background={`bg-[#d87d4a]`} hoverBackground={`hover:bg-[#fbaf85]`} />
                         </Link>
                     </div>
                 </div>

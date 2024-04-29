@@ -17,17 +17,20 @@
         {
             "imageSrcMobile": "/section/headphones-mobile.svg",
             "imageSrcDesktop": "/section/headphones-desktop.svg",
-            "title": "HEADPHONES"
+            "title": "HEADPHONES",
+            "url": "/headphones"
         },
         {
             "imageSrcMobile": "/section/speakers-mobile.svg",
             "imageSrcDesktop": "/section/speakers-desktop.svg",
-            "title": "SPEAKERS"
+            "title": "SPEAKERS",
+            "url": "/speakers"
         },
         {
             "imageSrcMobile": "/section/earphones-mobile.svg",
             "imageSrcDesktop": "/section/earphones-desktop.svg",
-            "title": "EARPHONES"
+            "title": "EARPHONES",
+            "url": "/earphones"
         }
     ],
     "cards": {

@@ -91,7 +91,7 @@ function Product() {
                         <h3 className='text-[24px] leading-[36px] font-bold text-[#000] tracking-[0.8px]'>IN THE BOX</h3>
                         <div className='flex flex-col gap-[8px]'>
                             {product.box.amount.map((amount, index) => (
-                                <div className='flex gap-6'>
+                                <div className='flex gap-6' key={index}>
                                     <span className='text-[15px] font-bold text-[#d87d4a] leading-[25px]'>{amount}</span>
                                     <span className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.box.items[index]}</span>
                                 </div>
@@ -103,7 +103,7 @@ function Product() {
                 <div className='flex flex-col w-full items-center gap-5'>
                     {product && (
                         product.images.map((item, index) => (
-                            <div className='flex w-full items-center'>
+                            <div className='flex w-full items-center' key={index}>
                                 <img className={`w-full rounded-[8px] object-cover ${imageHeight[index]}`} src={require(`../assets${item}`)} alt={product.title} />
                             </div>
                         ))

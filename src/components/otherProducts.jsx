@@ -14,7 +14,7 @@ export default function OtherProducts({ product }) {
                     <div className='flex flex-col w-full gap-8 items-center text-center'>
                         <h1 className='text-[28px] font-bold text-[#000] tracking-[1px] leading-[38px]'>{item}</h1>
                         <Link to={`/${product.otherCards.category[index]}/${product.otherCards.newId[index]}`}>
-                            <Button text={`[#FFF]`} background={`[#d87d4a]`} hoverBackground={`[#fbaf85]`} />
+                            <Button text={`text-[#FFF]`} background={`bg-[#d87d4a]`} hoverBackground={`hover:bg-[#fbaf85]`} />
                         </Link>
                     </div>
                 </div>

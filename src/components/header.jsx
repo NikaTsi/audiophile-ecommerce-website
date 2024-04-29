@@ -24,6 +24,9 @@ export default function Header() {
             </div>
 
             <div className='flex w-full border-t border-[#fafafa] opacity-10 md:px-10'></div>
+
+            <Categories />
+
         </header>
     )
 }

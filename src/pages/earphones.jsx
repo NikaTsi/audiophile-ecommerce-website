@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../components/header'
 import Categories from '../components/categories'
 import Advertisement from '../components/advertisement'
