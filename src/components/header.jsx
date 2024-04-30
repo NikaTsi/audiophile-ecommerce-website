@@ -13,7 +13,7 @@ export default function Header() {
     }
 
     return (
-        <header className='flex flex-col w-full font-Manrope bg-[#000000] sticky top-0 z-50'>
+        <header className='flex flex-col w-full font-Manrope bg-[#000000] sticky top-0 z-20'>
 
             <div className='flex w-full justify-between items-center py-8 px-6 md:py-8 md:px-10'>
                 <div className='flex w-full items-center gap-[76px] md:gap-[42px]'>
@@ -32,8 +32,21 @@ export default function Header() {
 
             <div className='flex w-full border-t border-[#fafafa] opacity-10 md:px-10'></div>
 
-            <div className={`absolute flex w-full bg-[#FFF] pb-[35px] -z-10 duration-500  ${menu ? "top-[90px]" : "top-[-1000%]"}`}>
+            {/* <div className={`absolute flex w-full bg-[#FFF] pb-[35px] duration-500 z-50 overflow-y-scroll ${menu ? "top-[90px]" : "top-[-1000%]"}`}>
                 <Categories ptValue={true}/>
+            </div> */}
+
+            {/* <div className={`absolute flex max-h-[750px] flex-col w-full bg-[#FFF] pb-[35px] duration-500 z-50 overflow-y-scroll ${menu ? " top-[90px]" : "top-[-1000%]"}`}>
+                <Categories ptValue={true}/>
+            </div> */}
+
+            <div className='flex flex-col w-full'>
+                {/* <div className={`absolute flex flex-col w-full h bg-[#FFF] pb-[35px] duration-500 z-50 overflow-y-scroll rounded-b-[8px] ${menu ? "top-[90px] max-h-[calc(100vh-90px)]" : "overflow-hidden top-[-1000%]"}`}>
+                    <Categories ptValue={true} />
+                </div> */}
+
+                <div className={`flex w-full min-h-[100vh] bg-[#000] opacity-40 ${menu ? "flex" : "hidden"}`}>
+                </div>
             </div>
 
         </header>
