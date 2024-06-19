@@ -9,7 +9,7 @@ export default function Categories({ value, ptValue }) {
   return (
     <section className={`flex flex-col  w-full items-center gap-[68px] ${value && "pb-[120px]"} ${ptValue ? "pt-[84px]" : "pt-[92px]"}`}>
       {data.section.map((item, index) => (
-        <Link to={item.url}>
+        <Link to={item.url} key={index}>
           <div className='flex flex-col w-[327px] text-center items-center bg-[#f1f1f1] rounded-[8px] relative pt-[88px] pb-[22px] cursor-pointer group' key={index}>
             <img className={`absolute top-[calc(-52px)] drop-shadow-3xl ${imageWidths[index]}`} src={require(`../assets${item.imageSrcMobile}`)} alt="icon" />
             <h1 className='font-bold text-[15px] text-[#000000] tracking-[1px]'>{item.title}</h1>

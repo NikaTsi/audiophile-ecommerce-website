@@ -52,6 +52,8 @@ function Product() {
 
     let imageHeight = ["h-[174px]", "h-[174px]", "h-[368px]"]
 
+    console.log(cart);
+
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
             <Header />
