@@ -4,9 +4,9 @@ import burgerMenu from '../assets/navigation/burger-menu.svg';
 import logo from '../assets/navigation/logo.svg';
 import cartIcon from '../assets/navigation/cart.svg';
 import Categories from './categories';
-import CartBox from './cart'
+import CartBox from './cart';
 
-export default function Header() {
+export default function Header( {handleClear} ) {
     const [menu, setMenu] = useState(false);
     const [cart, setCart] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
@@ -41,7 +41,6 @@ export default function Header() {
         };
     }, [lastScrollY, menu]);
 
-    console.log(cart);
 
     return (
         <header className={`flex h-[91px] flex-col w-full font-Manrope bg-[#000000] sticky top-0 z-20 transition-transform duration-300 ${showHeader || menu || cart ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
@@ -60,19 +59,15 @@ export default function Header() {
                 </div>
             </div>
 
-            {cart && <CartBox />}
+            {cart && <CartBox handleClear={handleClear} />}
 
             <div className='flex w-full border-t border-[#fafafa] opacity-10 md:px-10'></div>
 
-                <div className={`absolute flex flex-col w-full h bg-[#FFF] pb-[35px] duration-300 z-50 overflow-y-scroll rounded-b-[20px] ${menu ? "top-[90px] max-h-[calc(100vh-90px)]" : "overflow-hidden top-[-1000%]"}`}>
-                    <Categories ptValue={true} />
-                </div>
+            <div className={`absolute flex flex-col w-full h bg-[#FFF] pb-[35px] duration-300 z-50 overflow-y-scroll rounded-b-[20px] ${menu ? "top-[90px] max-h-[calc(100vh-90px)]" : "overflow-hidden top-[-1000%]"}`}>
+                <Categories ptValue={true} />
+            </div>
 
-                <div>
-
-                </div>
-
-                <div className={`flex w-full min-h-[100vh] bg-[#000] opacity-60 ${menu || cart ? "flex" : "hidden"}`}></div>
+            <div className={`flex w-full min-h-[100vh] bg-[#000] opacity-60 ${menu || cart ? "flex" : "hidden"}`}></div>
         </header>
     );
 }

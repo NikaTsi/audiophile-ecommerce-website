@@ -15,7 +15,9 @@ function Product() {
 
     useEffect(() => {
         const cartFromStorage = localStorage.getItem('cart');
-        if (cartFromStorage) {
+        if (!cartFromStorage || cartFromStorage === '[]') {
+            setCart([]);
+        } else {
             setCart(JSON.parse(cartFromStorage));
         }
     }, []);
@@ -26,18 +28,19 @@ function Product() {
     }, [productId, category]);
 
     const addToCart = () => {
-        const newItem = { name: product.name, title: product.title, price: product.price, quantity };
+        const newItem = { name: product.name, title: product.title, price: product.price, quantity, img: product.img };
         const itemExistsIndex = cart.findIndex(item => item.title === product.title);
 
+        let updatedCart;
         if (itemExistsIndex !== -1) {
-            const updatedCart = [...cart];
+            updatedCart = [...cart];
             updatedCart[itemExistsIndex].quantity += quantity;
-            setCart(updatedCart);
         } else {
-            setCart(prevCart => [...prevCart, newItem]);
+            updatedCart = [...cart, newItem];
         }
 
-        localStorage.setItem('cart', JSON.stringify(cart));
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
 
     const incrementQuantity = () => {
@@ -50,13 +53,17 @@ function Product() {
         }
     };
 
+    const handleClear = () => {
+        localStorage.removeItem('cart')
+        setCart([])
+    }
+
     let imageHeight = ["h-[174px]", "h-[174px]", "h-[368px]"]
 
-    console.log(cart);
 
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
-            <Header />
+            <Header handleClear={handleClear} />
 
             <div className='flex flex-col w-full px-6 '>
 
@@ -116,8 +123,8 @@ function Product() {
                     <h1 className='text-[26px] font-bold text-[#000] tracking-[0.9px] leading-[36px]'>YOU MAY ALSO LIKE</h1>
                 </div>
 
-                {product && <OtherProducts product={product}/>}
-                
+                {product && <OtherProducts product={product} />}
+
             </div>
 
             <Categories />
