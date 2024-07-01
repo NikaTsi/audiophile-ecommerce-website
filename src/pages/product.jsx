@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useCartContext } from '../CartContext';
 import Header from '../components/header';
 import Categories from '../components/categories';
 import Advertisement from '../components/advertisement';
@@ -8,39 +9,19 @@ import OtherProducts from '../components/otherProducts';
 import data from '../data.json';
 
 function Product() {
+    const { cart, addToCart, clearCart } = useCartContext();
     const { productId, category } = useParams();
     const [quantity, setQuantity] = useState(1);
-    const [cart, setCart] = useState([]);
     const [product, setProduct] = useState(null);
-
-    useEffect(() => {
-        const cartFromStorage = localStorage.getItem('cart');
-        if (!cartFromStorage || cartFromStorage === '[]') {
-            setCart([]);
-        } else {
-            setCart(JSON.parse(cartFromStorage));
-        }
-    }, []);
 
     useEffect(() => {
         const foundProduct = data.cards[category]?.find(item => item.id === productId);
         setProduct(foundProduct);
     }, [productId, category]);
 
-    const addToCart = () => {
+    const handleAddToCart = () => {
         const newItem = { name: product.name, title: product.title, price: product.price, quantity, img: product.img };
-        const itemExistsIndex = cart.findIndex(item => item.title === product.title);
-
-        let updatedCart;
-        if (itemExistsIndex !== -1) {
-            updatedCart = [...cart];
-            updatedCart[itemExistsIndex].quantity += quantity;
-        } else {
-            updatedCart = [...cart, newItem];
-        }
-
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        addToCart(newItem);
     };
 
     const incrementQuantity = () => {
@@ -53,17 +34,11 @@ function Product() {
         }
     };
 
-    const handleClear = () => {
-        localStorage.removeItem('cart')
-        setCart([])
-    }
-
     let imageHeight = ["h-[174px]", "h-[174px]", "h-[368px]"]
-
 
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
-            <Header handleClear={handleClear} />
+            <Header />
 
             <div className='flex flex-col w-full px-6 '>
 
@@ -86,7 +61,7 @@ function Product() {
                                 <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantity}</span>
                                 <button className='flex items-center justify-center w-4 h-[18px]' onClick={incrementQuantity}>+</button>
                             </div>
-                            <button className='font-bold w-40 h-[48px] bg-[#d87d4a] text-[13px] tracking-[1px] text-[#FFF]' onClick={addToCart}>ADD TO CART</button>
+                            <button className='font-bold w-40 h-[48px] bg-[#d87d4a] text-[13px] tracking-[1px] text-[#FFF]' onClick={handleAddToCart}>ADD TO CART</button>
                         </div>
                     </div>
                 )}

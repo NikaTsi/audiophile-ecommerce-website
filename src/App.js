@@ -5,6 +5,7 @@ import Headphones from "./pages/headphones";
 import Speakers from './pages/speakers';
 import EarPhones from './pages/earphones';
 import Product from './pages/product';
+import { CartProvider } from './CartContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,13 +21,15 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/headphones' element={<Headphones />} />
-        <Route path='/speakers' element={<Speakers />} />
-        <Route path='/earphones' element={<EarPhones />} />
-        <Route path="/:category/:productId" element={<Product />} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/headphones' element={<Headphones />} />
+          <Route path='/speakers' element={<Speakers />} />
+          <Route path='/earphones' element={<EarPhones />} />
+          <Route path="/:category/:productId" element={<Product />} />
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   );
 }

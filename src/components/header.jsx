@@ -6,7 +6,7 @@ import cartIcon from '../assets/navigation/cart.svg';
 import Categories from './categories';
 import CartBox from './cart';
 
-export default function Header( {handleClear} ) {
+export default function Header() {
     const [menu, setMenu] = useState(false);
     const [cart, setCart] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
@@ -59,7 +59,7 @@ export default function Header( {handleClear} ) {
                 </div>
             </div>
 
-            {cart && <CartBox handleClear={handleClear} />}
+            {cart && <CartBox />}
 
             <div className='flex w-full border-t border-[#fafafa] opacity-10 md:px-10'></div>
 
