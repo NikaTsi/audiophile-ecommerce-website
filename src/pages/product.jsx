@@ -9,7 +9,7 @@ import OtherProducts from '../components/otherProducts';
 import data from '../data.json';
 
 function Product() {
-    const { cart, addToCart, clearCart } = useCartContext();
+    const { addToCart } = useCartContext();
     const { productId, category } = useParams();
     const [quantity, setQuantity] = useState(1);
     const [product, setProduct] = useState(null);
@@ -20,7 +20,7 @@ function Product() {
     }, [productId, category]);
 
     const handleAddToCart = () => {
-        const newItem = { name: product.name, title: product.title, price: product.price, quantity, img: product.img };
+        const newItem = { name: product.name, title: product.title, price: product.price, quantity, img: product.img, id: product.id };
         addToCart(newItem);
     };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCartContext } from '../CartContext';
 
 export default function CartBox() {
-    const { cart, clearCart } = useCartContext();
+    const { cart, clearCart, updateQuantity } = useCartContext();
     const [quantities, setQuantities] = useState({});
 
     useEffect(() => {
@@ -24,50 +24,33 @@ export default function CartBox() {
         }
     }, [quantities, cart]);
 
-    const addToCart = (item) => {
-        const updatedQuantities = {
-            ...quantities,
-            [item.id]: (quantities[item.id] || 0) + item.quantity
-        };
-        setQuantities(updatedQuantities);
-        updateCartInLocalStorage(updatedQuantities);
-    };
-
-    const updateQuantity = (id, newQuantity) => {
+    const handleQuantityChange = (id, newQuantity) => {
         const updatedQuantities = {
             ...quantities,
             [id]: newQuantity
         };
         setQuantities(updatedQuantities);
-        updateCartInLocalStorage(updatedQuantities);
-    };
-
-    const updateCartInLocalStorage = (newQuantities) => {
-        const updatedCart = cart.map(item => ({
-            ...item,
-            quantity: newQuantities[item.id] || 0
-        }));
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        updateQuantity(id, newQuantity);
     };
 
     const incrementQuantity = (id) => {
-        updateQuantity(id, (quantities[id] || 0) + 1);
+        const newQuantity = (quantities[id] || 0) + 1;
+        handleQuantityChange(id, newQuantity);
     };
 
     const decrementQuantity = (id) => {
-        updateQuantity(id, (quantities[id] || 0) > 1 ? (quantities[id] || 0) - 1 : 1);
+        const newQuantity = (quantities[id] || 0) > 1 ? (quantities[id] || 0) - 1 : 1;
+        handleQuantityChange(id, newQuantity);
     };
 
-    let total = cart.length > 0 ? "$" + " " + cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0) : "$ 0";
+    const total = cart.length > 0 ? "$ " + cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0).toFixed(2) : "$ 0";
 
     function commafy(num) {
         let str = num.toString().split('.');
         str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
         if (str[1]) {
             str[1] = str[1].replace(/(\d{3})/g, '$1 ');
         }
-
         return str.join('.');
     }
 

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Main from "./pages/main";
-import Headphones from "./pages/headphones";
+import Main from './pages/main';
+import Headphones from './pages/headphones';
 import Speakers from './pages/speakers';
 import EarPhones from './pages/earphones';
 import Product from './pages/product';
-import { CartProvider } from './CartContext';
+import { CartContextProvider } from './CartContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,15 +21,15 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <CartProvider>
+      <CartContextProvider>
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/headphones' element={<Headphones />} />
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/earphones' element={<EarPhones />} />
-          <Route path="/:category/:productId" element={<Product />} />
+          <Route path='/:category/:productId' element={<Product />} />
         </Routes>
-      </CartProvider>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
