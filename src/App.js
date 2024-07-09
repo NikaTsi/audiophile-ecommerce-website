@@ -5,6 +5,7 @@ import Headphones from './pages/headphones';
 import Speakers from './pages/speakers';
 import EarPhones from './pages/earphones';
 import Product from './pages/product';
+import Checkout from './pages/checkout';
 import { CartContextProvider } from './CartContext';
 
 function ScrollToTop() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/earphones' element={<EarPhones />} />
           <Route path='/:category/:productId' element={<Product />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </CartContextProvider>
     </BrowserRouter>

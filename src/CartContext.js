@@ -24,15 +24,14 @@ export const CartContextProvider = ({ children }) => {
     };
 
     const updateQuantity = (id, newQuantity) => {
-        const updatedCart = cart.map(item =>
-            item.id === id ? { ...item, quantity: newQuantity } : item
-        );
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
-
-    const removeFromCart = (id) => {
-        const updatedCart = cart.filter(item => item.id !== id);
+        let updatedCart;
+        if (newQuantity > 0) {
+            updatedCart = cart.map(item =>
+                item.id === id ? { ...item, quantity: newQuantity } : item
+            );
+        } else {
+            updatedCart = cart.filter(item => item.id !== id);
+        }
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
@@ -43,7 +42,7 @@ export const CartContextProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, updateQuantity, removeFromCart, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, updateQuantity, clearCart }}>
             {children}
         </CartContext.Provider>
     );

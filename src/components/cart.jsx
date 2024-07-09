@@ -15,13 +15,19 @@ export default function CartBox() {
     }, []);
 
     useEffect(() => {
-        if (Object.keys(quantities).length > 0) {
-            const updatedCart = cart.map(item => ({
-                ...item,
-                quantity: quantities[item.id]
-            }));
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
-        }
+        const updatedQuantities = {};
+        cart.forEach(item => {
+            updatedQuantities[item.id] = item.quantity;
+        });
+        setQuantities(updatedQuantities);
+    }, [cart]);
+
+    useEffect(() => {
+        const updatedCart = cart.filter(item => quantities[item.id] > 0).map(item => ({
+            ...item,
+            quantity: quantities[item.id]
+        }));
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
     }, [quantities, cart]);
 
     const handleQuantityChange = (id, newQuantity) => {
@@ -39,8 +45,8 @@ export default function CartBox() {
     };
 
     const decrementQuantity = (id) => {
-        const newQuantity = (quantities[id] || 0) > 1 ? (quantities[id] || 0) - 1 : 1;
-        handleQuantityChange(id, newQuantity);
+        const newQuantity = (quantities[id] || 0) - 1;
+        handleQuantityChange(id, newQuantity > 0 ? newQuantity : 0);
     };
 
     const total = cart.length > 0 ? "$ " + cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0).toFixed(2) : "$ 0";
@@ -61,20 +67,22 @@ export default function CartBox() {
                 <p onClick={clearCart} className='font-medium text-[15px] text-[#000] opacity-50 underline cursor-pointer hover:opacity-70'>Remove all</p>
             </div>
 
-            <div>
+            <div className='flex flex-col w-full gap-[24px]'>
                 {cart.length > 0 ? (
                     cart.map((item, index) => (
                         <div key={index} className='flex justify-between items-center'>
-                            <div className='flex items-center'>
-                                <img src={require(`../assets${item.img}`)} alt={item.name} className='w-12 h-12 rounded-[8px]' />
-                                <div className='flex flex-col ml-4'>
-                                    <span className='font-medium text-[15px] text-[#000]'>{item.name}</span>
-                                    <span className='font-medium text-[15px] text-[#000] opacity-50'>{item.price}</span>
+                            <div className='flex items-center gap-4'>
+                                <div className='flex justify-center items-center bg-[#f1f1f1] rounded-[8px] w-[64px] h-[64px] '>
+                                    <img src={require(`../assets${item.img}`)} alt={item.name} className='w-12 h-12 rounded-[8px]' />
+                                </div>
+                                <div className='flex flex-col'>
+                                    <span className='font-bold text-[15px] leading-[25px] text-[#000]'>{item.name}</span>
+                                    <span className='font-bold text-[14px] leading-[25px] text-[#000] opacity-50'>{item.price}</span>
                                 </div>
                             </div>
-                            <div className="flex h-12 w-[120px] gap-5 items-center justify-center bg-[#f1f1f1]">
+                            <div className="flex h-[36px] w-[100px] gap-[12px] items-center justify-center bg-[#f1f1f1]">
                                 <button className='flex items-center justify-center w-4 h-[18px]' onClick={() => decrementQuantity(item.id)}>-</button>
-                                <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantities[item.id] || 0}</span>
+                                <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantities[item.id]}</span>
                                 <button className='flex items-center justify-center w-4 h-[18px]' onClick={() => incrementQuantity(item.id)}>+</button>
                             </div>
                         </div>
@@ -85,8 +93,8 @@ export default function CartBox() {
             </div>
 
             <div className='flex w-full justify-between items-center'>
-                <h1 className='font-bold text-[15px] text-[#000]'>TOTAL</h1>
-                <p className='font-bold text-[15px] text-[#000]'>
+                <h1 className='font-medium text-[15px] opacity-50 text-[#000]'>TOTAL</h1>
+                <p className='font-bold text-[18px] text-[#000]'>
                     {commafy(total)}
                 </p>
             </div>
