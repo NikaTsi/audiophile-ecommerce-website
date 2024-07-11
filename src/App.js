@@ -6,6 +6,8 @@ import Speakers from './pages/speakers';
 import EarPhones from './pages/earphones';
 import Product from './pages/product';
 import Checkout from './pages/checkout';
+import Header from './components/header';
+import Footer from './components/footer';
 import { CartContextProvider } from './CartContext';
 
 function ScrollToTop() {
@@ -23,6 +25,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <CartContextProvider>
+        <Header />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/headphones' element={<Headphones />} />
@@ -31,9 +34,12 @@ function App() {
           <Route path='/:category/:productId' element={<Product />} />
           <Route path='/checkout' element={<Checkout />} />
         </Routes>
+        <Footer />
       </CartContextProvider>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+

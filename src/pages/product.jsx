@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useCartContext } from '../CartContext';
-import Header from '../components/header';
 import Categories from '../components/categories';
 import Advertisement from '../components/advertisement';
-import Footer from '../components/footer';
 import OtherProducts from '../components/otherProducts';
 import data from '../data.json';
 
@@ -38,7 +36,6 @@ function Product() {
 
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
-            <Header />
 
             <div className='flex flex-col w-full px-6 '>
 
@@ -104,7 +101,6 @@ function Product() {
 
             <Categories />
             <Advertisement />
-            <Footer />
         </main>
     );
 }
