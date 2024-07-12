@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import burgerMenu from '../assets/navigation/burger-menu.svg';
 import logo from '../assets/navigation/logo.svg';
 import cartIcon from '../assets/navigation/cart.svg';
@@ -11,6 +11,7 @@ export default function Header() {
     const [cart, setCart] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const location = useLocation();
 
     function handleMenu() {
         setMenu(!menu);
@@ -41,6 +42,10 @@ export default function Header() {
         };
     }, [lastScrollY, menu]);
 
+    useEffect(() => {
+        setMenu(false);
+        setCart(false);
+    }, [location]);
 
     return (
         <header className={`flex h-[91px] flex-col w-full font-Manrope bg-[#000000] sticky top-0 z-20 transition-transform duration-300 ${showHeader || menu || cart ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
