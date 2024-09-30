@@ -10,13 +10,14 @@ export default function Shipping() {
     ];
 
     return (
-        <div className='checkout__form-container'>
-            <h5 className='checkout__subtitle'>Shipping info</h5>
-            <div className='checkout__shipping'>
+        <div className='flex flex-col w-full gap-6'>
+            <h5 className='text-[13px] font-bold leading-[25px] tracking-[1px] text-[#d87d4a] '>SHIPPING INFO</h5>
+            <div className='flex flex-col w-full gap-6'>
                 {shippingInfo.map((info) => (
                     <InputField key={info.id} {...info} />
                 ))}
             </div>
         </div>
+
     );
 }

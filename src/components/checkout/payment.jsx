@@ -8,13 +8,14 @@ export default function Payment() {
     ];
 
     return (
-        <div className='checkout__form-container'>
-            <h5 className='checkout__subtitle'>Payment details</h5>
-            <div className='checkout__payment'>
+        <div className='flex flex-col w-full gap-6'>
+            <h5 className='text-[13px] font-bold leading-[25px] tracking-[1px] text-[#d87d4a] '>Payment details</h5>
+            <div className='flex flex-col w-full gap-6'>
                 {paymentDetails.map((detail) => (
                     <InputField key={detail.id} {...detail} />
                 ))}
             </div>
         </div>
+
     );
 }

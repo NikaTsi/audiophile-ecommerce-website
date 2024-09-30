@@ -38,8 +38,9 @@ function Product() {
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
 
             <div className='flex flex-col w-full px-6 '>
-
-                <Link to={`/${category}`} className='font-medium text-[15px] leading-[25px] text-[#000] opacity-50 pt-4 pb-6'>Go Back</Link>
+                <div>
+                    <Link to={`/${category}`} className=' inline-block font-medium text-[15px] leading-[25px] text-[#000] opacity-50 pt-4 pb-6'>Go Back</Link>
+                </div>
 
                 {product && (
                     <div className='flex flex-col w-full gap-8'>

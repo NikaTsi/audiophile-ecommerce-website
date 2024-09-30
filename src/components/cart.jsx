@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useCartContext } from '../CartContext';
 
 export default function CartBox() {
@@ -99,7 +100,9 @@ export default function CartBox() {
                 </p>
             </div>
 
-            <button className='w-full h-12 bg-[#D87D4A] text-white font-bold text-[15px] tracking-[1px]'>CHECKOUT</button>
+            <Link to={"/checkout"}>
+                <button className='w-full h-12 bg-[#D87D4A] text-white font-bold text-[15px] tracking-[1px]'>CHECKOUT</button>
+            </Link>
         </section>
     );
 }
