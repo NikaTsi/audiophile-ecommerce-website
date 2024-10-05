@@ -30,7 +30,7 @@ function Checkout() {
 
         </section>
 
-        <section className='flex flex-col w-full bg-[#FFFFFF] px-6 py-8 mb-[98px] rounded-[8px]'>
+        <section className='flex flex-col w-full bg-[#FFFFFF] px-6 py-8 mb-[98px] rounded-[8px] gap-8'>
           <Summary />
           <input className='text-[13px] w-full text-[#ffffff] font-bold bg-[#d87d4a] py-[15px] cursor-pointer hover:opacity-90 duration-300' type="submit" value="CONTINUE & PAY" />
         </section>

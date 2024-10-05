@@ -50,30 +50,27 @@ export default function CartBox() {
         handleQuantityChange(id, newQuantity > 0 ? newQuantity : 0);
     };
 
-    const total = cart.length > 0 ? "$ " + cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0).toFixed(2) : "$ 0";
+    const total = cart.length > 0 
+        ? cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0) 
+        : 0;
 
     function commafy(num) {
-        let str = num.toString().split('.');
-        str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        if (str[1]) {
-            str[1] = str[1].replace(/(\d{3})/g, '$1 ');
-        }
-        return str.join('.');
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
     return (
-        <section className='absolute font-Manrope z-50 top-[115px] right-[24px] flex flex-col bg-[#FFF] rounded-[8px] w-[327px] h-[488px] py-[32px] px-[28px] gap-[32px]'>
+        <section className='absolute font-Manrope z-50 top-[115px] right-[24px] flex flex-col bg-[#FFF] rounded-[8px] w-[327px] h-[495px] py-[32px] px-[28px] gap-[30px]'>
             <div className='flex w-full justify-between items-center'>
                 <h1 className='font-bold tracking-[1.3px] text-[18px] text-[#000]'>CART ({cart.length})</h1>
                 <p onClick={clearCart} className='font-medium text-[15px] text-[#000] opacity-50 underline cursor-pointer hover:opacity-70'>Remove all</p>
             </div>
 
-            <div className='flex flex-col w-full gap-[24px]'>
+            <div className='flex flex-col w-full gap-[24px] max-h-[360px] overflow-y-auto'>
                 {cart.length > 0 ? (
                     cart.map((item, index) => (
                         <div key={index} className='flex justify-between items-center'>
                             <div className='flex items-center gap-4'>
-                                <div className='flex justify-center items-center bg-[#f1f1f1] rounded-[8px] w-[64px] h-[64px] '>
+                                <div className='flex justify-center items-center bg-[#f1f1f1] rounded-[8px] w-[64px] h-[64px]'>
                                     <img src={require(`../assets${item.img}`)} alt={item.name} className='w-12 h-12 rounded-[8px]' />
                                 </div>
                                 <div className='flex flex-col'>
@@ -96,7 +93,7 @@ export default function CartBox() {
             <div className='flex w-full justify-between items-center'>
                 <h1 className='font-medium text-[15px] opacity-50 text-[#000]'>TOTAL</h1>
                 <p className='font-bold text-[18px] text-[#000]'>
-                    {commafy(total)}
+                    {`$ ${commafy(total.toFixed(2))}`}
                 </p>
             </div>
 
