@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Billing from '../components/checkout/billing'
 import Payment from '../components/checkout/payment'
 import Shipping from '../components/checkout/shipping'
 import Summary from '../components/summary'
+import Confirmation from '../components/confirmation'
 
 function Checkout() {
+  const [submission, setSubmission] = useState(false)
+
+  const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Form submitted!');
+    if (true && storedCart.length > 0) {
+      setSubmission(true)
+    }else {
+      alert("YOUR CART IS EMPTY!")
+    }
   };
 
   return (
-    <main className='flex flex-col w-full min-h-screen items-center font-Manrope px-6 bg-[#fafafa]'>
+    <main className='relative flex flex-col w-full min-h-screen items-center font-Manrope px-6 bg-[#fafafa]'>
+
+      {submission && (
+        <div className='absolute top-0 flex flex-col w-full h-full z-[100]'>
+          <Confirmation />
+        </div>
+      )}
 
       <div className='flex w-full'>
         <div>

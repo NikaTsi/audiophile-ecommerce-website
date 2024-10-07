@@ -4,16 +4,17 @@ function Summary() {
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const total = storedCart.length > 0
-    ? storedCart.reduce((total, item) => {
-        const itemPrice = parseFloat(item.price.replace('$', '').replace(/,/g, '').trim());
-        return total + itemPrice * item.quantity;
-    }, 0) : 0;
+        ? storedCart.reduce((total, item) => {
+            const itemPrice = parseFloat(item.price.replace('$', '').replace(/,/g, '').trim());
+            return total + itemPrice * item.quantity;
+        }, 0) : 0;
 
-    const formattedTotal = total.toLocaleString()
+    const formattedTotal = total.toLocaleString();
+    const grandTotal = (total + 50).toLocaleString();
 
-
-    const grandTotal = (total + 50 + 1079).toLocaleString()
-
+    if (storedCart.length === 0) {
+        return <h1>Your cart is empty</h1>;
+    }
 
     return (
         <section className='flex flex-col w-full gap-8'>
@@ -23,7 +24,6 @@ function Summary() {
                 {storedCart.map((item, index) => (
                     <div key={index} className="flex items-center justify-between">
                         <div className='flex items-center'>
-
                             <div className='flex justify-center items-center rounded-[8px] w-[64px] h-[64px] bg-[#f1f1f1]'>
                                 <img src={require(`../assets${item.img}`)} className='w-12 h-12 rounded-[8px]' alt={item.title} />
                             </div>
@@ -39,7 +39,6 @@ function Summary() {
                 ))}
             </div>
 
-
             <div className='flex flex-col w-full gap-2'>
                 <div className='flex justify-between'>
                     <h6 className='text-[#000000] text-[15px] font-medium leading-[25px] opacity-50'>TOTAL</h6>
@@ -50,17 +49,17 @@ function Summary() {
                     <span className='text-[#000000] text-[18px] font-bold'>$ {total !== 0 ? 50 : 0}</span>
                 </div>
                 <div className='flex justify-between'>
-                    <h6 className='text-[#000000] text-[15px] font-medium leading-[25px] opacity-50'>VAT(INCLUDED)</h6>
+                    <h6 className='text-[#000000] text-[15px] font-medium leading-[25px] opacity-50'>VAT (INCLUDED)</h6>
                     <span className='text-[#000000] text-[18px] font-bold'>$ {total !== 0 ? "1,079" : 0}</span>
                 </div>
             </div>
 
             <div className='flex justify-between'>
-                <h1 className='text-[#000000] text-[15px] font-medium leading-[25px] opacity-50'>GRAND TOTAL</h1><span className='text-[#d87d4a] text-[18px] font-bold'>$ {total !== 0 ? grandTotal : 0}</span>
+                <h1 className='text-[#000000] text-[15px] font-medium leading-[25px] opacity-50'>GRAND TOTAL</h1>
+                <span className='text-[#d87d4a] text-[18px] font-bold'>$ {total !== 0 ? grandTotal : 0}</span>
             </div>
-
         </section>
-    )
+    );
 }
 
-export default Summary
+export default Summary;

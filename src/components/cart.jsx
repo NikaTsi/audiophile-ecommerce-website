@@ -50,8 +50,8 @@ export default function CartBox() {
         handleQuantityChange(id, newQuantity > 0 ? newQuantity : 0);
     };
 
-    const total = cart.length > 0 
-        ? cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0) 
+    const total = cart.length > 0
+        ? cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '').replace(/,/g, '').trim()) * (quantities[item.id] || 0), 0)
         : 0;
 
     function commafy(num) {
@@ -96,10 +96,11 @@ export default function CartBox() {
                     {`$ ${commafy(total.toFixed(2))}`}
                 </p>
             </div>
-
-            <Link to={"/checkout"}>
-                <button className='w-full h-12 bg-[#D87D4A] text-white font-bold text-[15px] tracking-[1px]'>CHECKOUT</button>
-            </Link>
+            {cart.length > 0 ? (
+                <Link to={"/checkout"}>
+                    <button className='w-full h-12 bg-[#D87D4A] text-white font-bold text-[15px] tracking-[1px]'>CHECKOUT</button>
+                </Link>
+            ) : null}
         </section>
     );
 }
