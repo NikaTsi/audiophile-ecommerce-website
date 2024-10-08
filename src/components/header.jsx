@@ -68,7 +68,7 @@ export default function Header() {
 
             <div className='flex w-full border-t border-[#fafafa] opacity-10 md:px-10'></div>
 
-            <div className={`absolute flex flex-col w-full h bg-[#FFF] pb-[35px] duration-300 z-50 overflow-y-scroll rounded-b-[20px] ${menu ? "top-[90px] max-h-[calc(100vh-90px)]" : "overflow-hidden top-[-1000%]"}`}>
+            <div className={`absolute flex flex-col w-full h bg-[#FFF] pb-[35px] duration-300 z-50 overflow-y-scroll rounded-b-[20px] md:pb-[67px] ${menu ? "top-[90px] max-h-[calc(100vh-90px)]" : "overflow-hidden top-[-1000%]"}`}>
                 <Categories ptValue={true} />
             </div>
 

@@ -11,8 +11,8 @@ function Headphones() {
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
 
-            <div className='flex w-full py-8 justify-center bg-[#000]'>
-                <h1 className='text-[#FFF] text-[28px] tracking-[2px] font-bold'>HEADPHONES</h1>
+            <div className='flex w-full py-8 justify-center bg-[#000] md:pt-[105px] md:pb-[97px]'>
+                <h1 className='text-[#FFF] text-[28px] tracking-[2px] font-bold md:text-[40px] md:leading-[44px]'>HEADPHONES</h1>
             </div>
 
             <Card category={"headphones"} />

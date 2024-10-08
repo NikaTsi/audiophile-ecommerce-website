@@ -25,29 +25,29 @@ function Main() {
 
       <Categories value={"main"} />
 
-      <div className='flex flex-col w-full px-6 gap-6'>
+      <div className='flex flex-col w-full px-6 gap-6 md:px-10'>
 
-        <div className='flex flex-col w-full items-center bg-[#d87d4a] rounded-[8px] py-[55px] px-6 gap-8 bg-circles-mobile bg-top bg-no-repeat bg-contain'>
+        <div className='flex flex-col w-full items-center bg-[#d87d4a] rounded-[8px] py-[55px] px-6 gap-8 bg-circles-mobile bg-top bg-no-repeat bg-contain md:bg-cover md:bg-top_[-120px]'>
           <img className='w-[172px] h-[207px]' src={zx9} alt="zx9" />
           <div className='flex flex-col text-center items-center gap-6'>
-            <h1 className='text-[36px] font-bold leading-10 tracking-[1.3px] text-[#FFF]'>ZX9 <br /> SPEAKER</h1>
-            <p className='text-[15px] font-medium leading-[25px] text-[#FFF] opacity-75'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+            <h1 className='text-[36px] font-bold leading-10 tracking-[1.3px] text-[#FFF] md:text-[56px] md:leading-[58px]'>ZX9 <br /> SPEAKER</h1>
+            <p className='text-[15px] font-medium leading-[25px] text-[#FFF] opacity-75 md:mb-4 md:px-[165px]'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
             <Link to={"/speakers/ZX9-speaker"}>
               <Button background={`bg-[#000]`} text={`text-[#FFF]`} hoverBackground={`hover:bg-[#4C4C4C]`} />
             </Link>
           </div>
         </div>
 
-        <div className='flex flex-col gap-8 w-full rounded-[8px] py-[101px] px-6 bg-ZX7 bg-top bg-no-repeat bg-cover'>
+        <div className='flex flex-col gap-8 w-full rounded-[8px] py-[101px] px-6 bg-ZX7 bg-top bg-no-repeat bg-cover md:px-[62px]'>
           <h1 className='text-[28px] font-bold tracking-[2px] text-[#000]'>ZX7 SPEAKER</h1>
           <Link to={"/speakers/ZX7-speaker"}>
             <Button background={`bg-transparent`} text={`text-[#000]`} border={`border-[#000]`} hoverBackground={`hover:bg-[#000]`} hoverText={`hover:text-[#FFF]`} />
           </Link>
         </div>
 
-        <div className='flex flex-col gap-6 w-full'>
-          <img className='h-[200px] w-full rounded-[8px] object-cover' src={yx1} alt="yx1" />
-          <div className='flex flex-col w-full gap-8 rounded-[8px] bg-[#f1f1f1] py-[41px] px-6'>
+        <div className='flex flex-col gap-6 w-full md:flex-row md:gap-[2%]'>
+          <img className='h-[200px] w-full rounded-[8px] object-cover md:h-[320px]' src={yx1} alt="yx1" />
+          <div className='flex flex-col w-full gap-8 rounded-[8px] bg-[#f1f1f1] py-[41px] px-6 md:px-10 md:pt-[101px]'>
             <h1 className='text-[28px] font-bold tracking-[2px] text-[#000]'>YX1 EARPHONES</h1>
             <Link to={"/earphones/YX1-earphones"}>
               <Button background={`bg-transparent`} text={`text-[#000]`} border={`border-[#000]`} hoverBackground={`hover:bg-[#000]`} hoverText={`hover:text-[#FFF]`} />
