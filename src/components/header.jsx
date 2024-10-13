@@ -17,7 +17,7 @@ export default function Header() {
         setMenu(!menu);
         setCart(false);
     }
-    
+
     function handleCart() {
         setCart(!cart);
         setMenu(false);
@@ -59,8 +59,9 @@ export default function Header() {
 
                 <div></div>
 
-                <div className='flex'>
-                    <img onClick={handleCart} className='w-[23px] h-5 cursor-pointer' src={cartIcon} alt="cart" />
+                <div className='flex flex-col items-center justify-center relative'>
+                    <div onClick={handleCart} className='absolute flex justify-center items-center w-[16px] h-[16px] bg-[#d87d4a] rounded-[50%] top-[-6px] left-[12px] cursor-pointer'><h1 className='text-[#FFFFFF] text-[12px]'>1</h1></div>
+                    <img onClick={handleCart} className='w-[24px] h-5 cursor-pointer' src={cartIcon} alt="cart" />
                 </div>
             </div>
 

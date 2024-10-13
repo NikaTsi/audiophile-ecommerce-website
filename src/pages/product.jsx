@@ -37,29 +37,32 @@ function Product() {
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
 
-            <div className='flex flex-col w-full px-6 '>
+            <div className='flex flex-col w-full px-6 md:px-10'>
                 <div>
                     <Link to={`/${category}`} className=' inline-block font-medium text-[15px] leading-[25px] text-[#000] opacity-50 pt-4 pb-6'>Go Back</Link>
                 </div>
 
                 {product && (
-                    <div className='flex flex-col w-full gap-8'>
+                    <div className='flex flex-col w-full gap-8 md:flex-row'>
                         <div className='flex w-full justify-center pt-[56px] h-[327px] bg-[#f1f1f1] rounded-[8px]'>
                             <img className="h-[202px] drop-shadow-3xl" src={require(`../assets${product.img}`)} alt={product.title} />
                         </div>
-                        <div className='flex flex-col gap-6'>
-                            <span className='text-[14px] font-normal text-[#d87d4a] tracking-[10px]'>{product.description}</span>
-                            <h1 className='text-[28px] font-bold text-[#000] tracking-[1px] leading-[38px]'>{product.title}</h1>
-                            <h1 className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.paragraph}</h1>
-                            <h1 className='text-[18px] font-bold text-[#000] tracking-[1.3px]'>{product.price}</h1>
-                        </div>
-                        <div className='flex w-full gap-4'>
-                            <div className="flex h-12 w-[120px] gap-5 items-center justify-center bg-[#f1f1f1]">
-                                <button className='flex items-center justify-center w-4 h-[18px]' onClick={decrementQuantity}>-</button>
-                                <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantity}</span>
-                                <button className='flex items-center justify-center w-4 h-[18px]' onClick={incrementQuantity}>+</button>
+
+                        <div className='flex flex-col w-full gap-8'>
+                            <div className='flex flex-col gap-6'>
+                                <span className='text-[14px] font-normal text-[#d87d4a] tracking-[10px]'>{product.description}</span>
+                                <h1 className='text-[28px] font-bold text-[#000] tracking-[1px] leading-[38px]'>{product.title}</h1>
+                                <h1 className='text-[15px] font-medium text-[#000] opacity-50 leading-[25px]'>{product.paragraph}</h1>
+                                <h1 className='text-[18px] font-bold text-[#000] tracking-[1.3px]'>{product.price}</h1>
                             </div>
-                            <button className='font-bold w-40 h-[48px] bg-[#d87d4a] text-[13px] tracking-[1px] text-[#FFF]' onClick={handleAddToCart}>ADD TO CART</button>
+                            <div className='flex w-full gap-4'>
+                                <div className="flex h-12 w-[120px] gap-5 items-center justify-center bg-[#f1f1f1]">
+                                    <button className='flex items-center justify-center w-4 h-[18px]' onClick={decrementQuantity}>-</button>
+                                    <span className='font-bold text-[13px] tracking-[1px] text-[#000]'>{quantity}</span>
+                                    <button className='flex items-center justify-center w-4 h-[18px]' onClick={incrementQuantity}>+</button>
+                                </div>
+                                <button className='font-bold w-40 h-[48px] bg-[#d87d4a] text-[13px] tracking-[1px] text-[#FFF]' onClick={handleAddToCart}>ADD TO CART</button>
+                            </div>
                         </div>
                     </div>
                 )}
