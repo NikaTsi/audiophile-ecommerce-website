@@ -9,8 +9,8 @@ import data from '../data.json';
 function Product() {
     const { addToCart } = useCartContext();
     const { productId, category } = useParams();
-    const [quantity, setQuantity] = useState(1);
-    const [product, setProduct] = useState(null);
+    const [ quantity, setQuantity ] = useState(1);
+    const [ product, setProduct ] = useState(null);
 
     useEffect(() => {
         const foundProduct = data.cards[category]?.find(item => item.id === productId);
