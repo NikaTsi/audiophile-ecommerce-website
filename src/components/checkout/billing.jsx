@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InputField from './inputField';
 
 export default function Billing() {
@@ -11,7 +11,7 @@ export default function Billing() {
     return (
         <div className='flex flex-col w-full gap-6'>
             <h5 className='text-[13px] font-bold leading-[25px] tracking-[1px] text-[#d87d4a] '>BILLING DETAILS</h5>
-            <div className='flex flex-col w-full gap-6'>
+            <div className='flex flex-col w-full gap-6 md:grid md:grid-cols-2'>
                 {billingDetails.map((detail) => (
                     <InputField key={detail.id} {...detail} />
                 ))}

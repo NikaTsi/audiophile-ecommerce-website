@@ -1,13 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
 import Categories from '../components/categories'
 import Advertisement from '../components/advertisement'
-import Footer from '../components/footer'
 import Card from '../components/card'
 
 
 function Headphones() {
-    
+
     return (
         <main className='flex flex-col w-full items-center font-Manrope bg-[#fafafa]'>
 
@@ -17,9 +15,11 @@ function Headphones() {
 
             <Card category={"headphones"} />
 
+            <section className='xl:w-[1280px]'>
+                <Categories />
+                <Advertisement />
+            </section>
 
-            <Categories />
-            <Advertisement />
         </main>
     )
 }

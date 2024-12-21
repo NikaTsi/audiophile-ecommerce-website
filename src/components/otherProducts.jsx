@@ -5,9 +5,9 @@ import Button from './button'
 export default function OtherProducts({ product }) {
     
     return (
-        <section className='flex flex-col w-full pt-10 pb-[80px] gap-[56px] items-center md:flex-row md:items-start md:justify-center md:gap-[2%] md:pt-[56px] md:pb-6'>
+        <section className='flex flex-col w-full pt-10 pb-[80px] gap-[56px] items-center md:flex-row md:items-start md:justify-center md:gap-[2%] md:pt-[56px] md:pb-6 lg:gap-[30px] xl:pt-[64px] xl:pb-[92px]'>
             {product.otherCards.heading.map((item, index) => (
-                <div className='flex flex-col w-full items-center gap-8 max-w-[327px] md:gap-10' key={index}>
+                <div className='flex flex-col w-full items-center gap-8 md:gap-10' key={index}>
                     <div className='flex w-full h-[120px] justify-center items-center bg-[#f1f1f1] rounded-[8px] md:h-[318px]'>
                         <img className='md:w-[150px]' src={require(`../assets${product.otherCards.icons[index]}`)} />
                     </div>

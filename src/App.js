@@ -20,12 +20,14 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
+function AppContent() {
+  const { pathname } = useLocation();
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <CartContextProvider>
-        <Header />
+        <Header bg={pathname === '/' ? 'bg-[#141414]' : 'bg-[#000]'} />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/headphones' element={<Headphones />} />
@@ -36,10 +38,16 @@ function App() {
         </Routes>
         <Footer />
       </CartContextProvider>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
 
 export default App;
-
-

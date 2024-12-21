@@ -7,6 +7,7 @@ module.exports = {
     },
     backgroundImage: {
       "MainBackground-mobile": 'url(./assets/main/mainBackground-mobile.svg)',
+      "MainBackground-desktop": 'url(./assets/main/mainBackground-desktop.svg)',
       "circles-mobile": 'url(./assets/main/circles-mobile.svg)',
       "circles-tablet": 'url(./assets/main/circles-tablet.svg)',
       "circles-desktop": 'url(./assets/main/circles-desktop.svg)',
